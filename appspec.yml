@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: app.py
+    destination: /home/ec2-user/
+  - source: secrethash.py
+    destination: /home/ec2-user/
+  - source: requirements.txt
+    destination: /home/ec2-user/
+  - source: unicorn_descriptions
+    destination: /home/ec2-user/unicorn_descriptions/
+hooks:
+  ApplicationStart:
+    - location: code-deploy.sh
